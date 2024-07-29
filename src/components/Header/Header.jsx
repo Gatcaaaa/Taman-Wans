@@ -39,7 +39,7 @@ export default function Header() {
     );
   }, []);
   return (
-    <Navbar className="fixed top-0 left-0 right-0 z-50 mx-auto max-w-screen-2xl py-1 md:py-5 px-2 pt-4 md:px-0">
+    <Navbar className="fixed top-0 left-0 right-0 z-50 mx-auto max-w-full py-1 md:py-5 px-2 pt-4 md:px-0">
       <div className="container mx-auto flex items-center justify-between">
         <Link to="/">
           <Typography color="blue-gray" className="text-lg font-bold">
