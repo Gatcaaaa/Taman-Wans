@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import FFCard from "./FFCard";
+import { Fade } from "react-awesome-reveal";
 
 export default function FloraFaunaComponent() {
   const description = (description) => {
@@ -51,26 +51,23 @@ export default function FloraFaunaComponent() {
         "Jambu mete atau jambu monyet (Anacardium occidentale) adalah sejenis tanaman dari suku Anacardiaceae yang berasal dari Brasil dan memiliki buah yang dapat dimakan. Jambu mete juga dikenal karena bentuknya yang mirip dengan hidung monyet bekantan asal Kalimantan; bijinya biasa dikeringkan dan digoreng untuk dijadikan berbagai macam penganan. Secara botani, tumbuhan ini sama sekali bukan anggota jambu-jambuan (Myrtaceae) maupun kacang-kacangan (Fabaceae), melainkan malah lebih dekat kekerabatannya dengan mangga (suku Anacardiaceae).",
     },
   ];
+  /*  container mx-auto md:mt-7*/
 
   return (
     <div>
-      <h2 className="container text-3xl mx-auto mt-10 md:text-4xl font-bold mb-10">
+      <h2 className="container text-3xl mx-auto mt-9 md:text-4xl font-bold">
         Our Flora & Fauna
       </h2>
       {DataFloraFauna.map((data, index) => {
-        const isEven = index % 2 === 0;
+        const isEven = index % 2 === 0 ? "right" : "left";
         return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: isEven ? -100 : 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="container mx-auto md:mt-7"
-          >
-            <FFCard image={data.image} title={data.name}>
-              {description(data.description)}
-            </FFCard>
-          </motion.div>
+          <div className="container mx-auto mt-10 md:mt-20" key={index}>
+            <Fade direction={isEven === "right" ? "right" : "left"}>
+              <FFCard image={data.image} title={data.name}>
+                {description(data.description)}
+              </FFCard>
+            </Fade>
+          </div>
         );
       })}
     </div>
