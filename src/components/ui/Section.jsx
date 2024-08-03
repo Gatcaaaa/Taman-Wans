@@ -1,4 +1,5 @@
 import { Typography, Card, CardBody } from "@material-tailwind/react";
+import { Fade } from "react-awesome-reveal";
 
 function ContentCard({ img, title, desc }) {
   return (
@@ -66,9 +67,17 @@ export function BlogSection11() {
       </Typography>
 
       <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3">
-        {contents.map(({ img, title, desc }) => (
-          <ContentCard key={title} img={img} title={title} desc={desc} />
-        ))}
+        {contents.map((data, index) => {
+          const fadeDirection = index % 2 === 0 ? "right" : "left";
+          return (
+            <Fade
+              key={data.title}
+              direction={fadeDirection === "right" ? "right" : "left"}
+            >
+              <ContentCard img={data.img} title={data.title} desc={data.desc} />
+            </Fade>
+          );
+        })}
       </div>
     </section>
   );

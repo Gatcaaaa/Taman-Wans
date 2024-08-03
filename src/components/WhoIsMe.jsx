@@ -1,4 +1,5 @@
 import { Button } from "@material-tailwind/react";
+import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 export default function WhoIsMe() {
@@ -11,20 +12,25 @@ export default function WhoIsMe() {
   };
   return (
     <section className="block md:grid grid-cols-2 gap-5 lg:gap-28 mb-17 px-8 py-10 mx-auto">
-      <img
-        src={sendProps.image}
-        className="mb-10 md:mb-0 rounded-3xl w-full h-full object-cover"
-        loading="lazy"
-      />
-      <div className="flex flex-col justify-center">
-        <h2 className="font-bold text-3xl mb-5">{sendProps.title}</h2>
-        <p className="mb-5">{sendProps.description}</p>
-        <Link to="/about">
-          <Button size="lg" color="green">
-            Baca Lebih Lanjut
-          </Button>
-        </Link>
-      </div>
+      <Fade direction="right">
+        <img
+          src={sendProps.image}
+          className="mb-10 md:mb-0 rounded-3xl w-full h-full object-cover"
+          loading="lazy"
+        />
+      </Fade>
+
+      <Fade direction="left">
+        <div className="flex flex-col justify-center">
+          <h2 className="font-bold text-3xl mb-5">{sendProps.title}</h2>
+          <p className="mb-5">{sendProps.description}</p>
+          <Link to="/about">
+            <Button size="lg" color="green">
+              Baca Lebih Lanjut
+            </Button>
+          </Link>
+        </div>
+      </Fade>
     </section>
   );
 }
