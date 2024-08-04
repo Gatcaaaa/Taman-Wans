@@ -23,7 +23,7 @@ export default function Header() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="container mx-auto flex items-center justify-between py-4 px-2">
         <Link to="/">
-          <span className="text-blue-gray-700 text-lg font-bold">
+          <span className=" pl-10 text-blue-gray-700 text-lg font-bold">
             Taman Wanasutan
           </span>
         </Link>

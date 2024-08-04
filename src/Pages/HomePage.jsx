@@ -1,11 +1,11 @@
-import Hero from "../components/ui/Hero";
-import BlogSection11 from "../components/ui/Section";
-import WhoIsMe from "../components/WhoIsMe";
+import HeroSection16 from "../components/Home/Hero";
+import BlogSection11 from "../components/Home/Section";
+import WhoIsMe from "../components/Home/WhoIsMe";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroSection16 />
       <div className="container mx-auto px-4">
         <BlogSection11 />
         <WhoIsMe />
